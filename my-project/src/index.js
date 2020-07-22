@@ -5,7 +5,7 @@ import App from './components/CardApp';  //Aquí vamos cambiando la línea (Card
 
 ReactDOM.render(
   <React.StrictMode>
-   { <App />}
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
