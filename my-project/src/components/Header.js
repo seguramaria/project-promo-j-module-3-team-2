@@ -1,6 +1,6 @@
 import React from "react";
 import "../stylesheets/_header.scss";
-import logo from "../images/logo-awesome-profile-cards.svg";
+import logoawesome from "../images/logo-awesome-profile-cards.svg";
 
 class Header extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class Header extends React.Component {
         <div class="header__card__logo">
           <a href="./index.html">
             <img
-              src={logo}
+              src={logoawesome}
               title="Ir a la Home"
               alt="Awesome Profile Cards Logo"
             />
