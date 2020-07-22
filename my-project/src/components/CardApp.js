@@ -1,15 +1,15 @@
-import React from 'react';
-import '../stylesheets/App.css';
-import Footer from './Footer';
-
+import React from "react";
+import "../stylesheets/App.css";
+import Footer from "./Footer";
+import Header from "./Header";
 
 function App() {
   return (
     <div className="App">
-Holi
-    <Footer/>
+      <Header />
+      Holi
+      <Footer />
     </div>
-   
   );
 }
 
