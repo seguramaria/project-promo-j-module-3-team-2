@@ -1,12 +1,8 @@
 import React from 'react';
-import '../stylesheets/App.css';
+import '../index.scss';
 
 function App() {
-  return (
-    <div className="App">
-Holi
-    </div>
-  );
+  return <div className='App'>Holi</div>;
 }
 
 export default App;

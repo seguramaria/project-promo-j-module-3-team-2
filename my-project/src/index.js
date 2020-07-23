@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './stylesheets/index.css';
-import App from './components/CardApp';  //Aquí vamos cambiando la línea (CardApp o Landing) hasta la lección 3.9.
+import './index.scss';
+import App from './components/CardApp'; //Aquí vamos cambiando la línea (CardApp o Landing) hasta la lección 3.9.
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,15 +1,19 @@
-@import "variables";
-@import "mixins";
-
-.header__card {
-  background-color: $color-light;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__logo {
-    margin-top: 31px;
-    margin-bottom: 30px;
-    margin-left: 40px;
-    width: 201px;
-    height: 50px;
+    margin-top: 95px;
+    margin-bottom: 35.4px;
+    width: 250px;
+    height: 63px;
+
+    @include tablet {
+      margin-bottom: 31px;
+      width: 419px;
+      height: 105px;
+    }
 
     & img {
       width: 100%;
