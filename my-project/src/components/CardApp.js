@@ -4,9 +4,9 @@ import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
 
-function App() {
+function CardApp() {
   return (
-    <div className='App'>
+    <div className="App">
       <Header />
       <Main />
       <Footer />
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default CardApp;
