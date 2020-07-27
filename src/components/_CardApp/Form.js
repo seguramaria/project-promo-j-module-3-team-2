@@ -1,7 +1,7 @@
 import React from "react";
-import "../index.scss";
-import Collapse from "./Collapse";
-import Inputs from "./_Form/Inputs.js";
+import "../../index.scss";
+import Collapse from "./_Form/Collapse";
+import Inputs from "./_Form/Inputs";
 
 const Form = () => {
   return (

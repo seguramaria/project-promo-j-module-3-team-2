@@ -1,7 +1,7 @@
-import React from 'react';
-import '../index.scss';
-import Form from './Form';
-import CardPreview from './CardPreview';
+import React from "react";
+import "../../index.scss";
+import Form from "./Form";
+import CardPreview from "./CardPreview";
 
 const Main = () => {
   return (
