@@ -1,0 +1,64 @@
+.collapsible {
+      width: 320px;
+      position: relative;
+      margin: auto;
+    // border-top: 1px solid $color-form-medium; RELLENA, COMPARTE
+    // margin-bottom: 60px; COMPARTE
+      &__title {
+        color: $color-light-dark;
+        text-transform: uppercase;
+        font-family: $font-primary;
+        font-weight: 600;
+        font-size: rem(18);
+        // margin-top: 10px; RELLENA, COMPARTE
+  
+        .icon {
+          width: 21px;
+          height: 18px;
+          color: $color-accenture;
+        }
+        .moonicondown {
+          color: $color-medium-yellow;
+          transform: rotate(110deg);
+  
+          &:hover {
+            animation: rotate;
+            animation-duration: 1.5s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+          }
+          @keyframes rotate {
+            from {
+              transform: rotate(110deg);
+            }
+            to {
+              transform: rotate(460deg);
+            }
+          }
+        }
+        .mooniconup {
+          color: $color-medium-yellow;
+          transform: rotate(-70deg);
+          &:hover {
+            animation: rotation;
+            animation-duration: 1.5s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+          }
+          @keyframes rotation {
+            from {
+              transform: rotate(-70deg);
+            }
+            to {
+              transform: rotate(300deg);
+            }
+          }
+        }
+      }
+      
+    
+//Display JS arrows//
+.hidden {
+display: none;
+}
+  

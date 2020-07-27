@@ -411,7 +411,7 @@
     }
     &:hover {
       background-color: $color-medium-yellow;
-      cursor: url('../images/cursor-sailor.png'), auto;
+      cursor: url("../images/cursor-sailor.png"), auto;
     }
   }
   .inactive {

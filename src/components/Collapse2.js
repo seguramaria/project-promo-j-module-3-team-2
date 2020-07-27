@@ -1,29 +1,27 @@
-import React, { useState } from 'react';
-import '../index.scss';
-import Inputs from './_Form/Inputs';
+import React, { useState } from "react";
+import "../index.scss";
+import Inputs from "./_Form/Inputs";
 
-const Collapse = (props) => {
-  const [isOpen, setIsOpen] = useState(true);
+
+function Collapse(props) {
+
+  const displayPanel = (evt) => props.handleCollapse(evt.currentTarget.id);
+// const Collapse = (props) => {
+//   const [isOpen, setIsOpen] = useState(true);
   return (
-    <div>
-      <section className='collpasable'>
-        {/* <Collapse title="Diseña" icon="fa-object-ungroup"> */}
-        <h2 className='collpasable__title'>
-          <i className='far fa-object-ungroup icon'></i>
-          {props.title}
-          <div className='click'>
-            <button>
-              <i className='fas fa-moon moonicondown'></i>
-            </button>
-            <button>
-              <i className='fas fa-moon hidden mooniconup'></i>
-            </button>
-          </div>
-        </h2>
-        <div className='collpasable-container hidden'>{props.children}</div>
-      </section>
-    </div>
+    <section className="collapsible">
+      <div className="collapsible__clickable--container" onClick={displayPanel} 
+           className={`collapse-item ${props.activePanel === props.id ? "active" : ""}`}>
+        <i className="far fa-object-ungroup icon"></i>
+        <h2 className="collapsible__title">{props.title}</h2>
+        <div className="click">
+          <i className="fas fa-moon moonicondown"></i>
+          <i className="fas fa-moon hidden mooniconup"></i>
+        </div>
+      </div>
+      <div className="collapsible-container hidden">{props.children}</div>
+    </section>
   );
 };
-
+}
 export default Collapse;
