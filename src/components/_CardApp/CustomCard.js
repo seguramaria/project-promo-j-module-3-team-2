@@ -1,9 +1,9 @@
 import React from "react";
 import "../../index.scss";
-import Collapse from "./_Form/Collapse";
-import Inputs from "./_Form/Inputs";
+import Collapse from "./_CustomCard/Collapse";
+import Inputs from "./_CustomCard/_Collapse/Inputs";
 
-const Form = () => {
+const CustomCard = () => {
   return (
     <section className="form">
       <div className="wrapper">
@@ -78,17 +78,21 @@ const Form = () => {
           <Collapse title="Rellena" icon="far fa-keyboard icon">
             <section className="form__section">
               <div className="form__section__signup ">
-                <Inputs />
-                <label htmlFor="job">Puesto</label>
-                <span className="asterisk">*</span>
-                <input
-                  className="js-input js-job"
+                <Inputs
+                  label="Nombre Completo"
+                  placeholder="Ej: Merche Lios"
+                  id="name"
+                  type="text"
+                  name="name"
+                />
+                <Inputs
+                  label="Puesto"
                   placeholder="Ej: Front-end"
                   id="job"
                   type="text"
                   name="job"
-                  required
                 />
+
                 <label htmlFor="image">Imagen de perfil</label>
                 <span className="asterisk">*</span>
                 <div className="image-wrapper">
@@ -197,4 +201,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CustomCard;
