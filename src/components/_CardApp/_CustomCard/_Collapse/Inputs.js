@@ -2,6 +2,15 @@ import React from "react";
 import "../../../../index.scss";
 
 const Inputs = (props) => {
+  /*   const handleChange = (ev) => {
+    const target = ev.target;
+    const value = target.value;
+    const id = target.id;
+
+    
+      setValue(id.value);
+    };
+  }; */
   return (
     <div>
       <label htmlFor="name"> {props.label}</label>
@@ -12,6 +21,7 @@ const Inputs = (props) => {
         id={props.id}
         type={props.type}
         name={props.name}
+        onChange={handleChange}
         required
       />
     </div>
