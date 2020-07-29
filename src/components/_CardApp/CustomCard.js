@@ -116,17 +116,23 @@ const CustomCard = () => {
                     <div className="profile__preview js__profile-preview"></div>
                   </div>
                 </div>
-                <label htmlFor="email">Email</label>
-                <span className="asterisk">*</span>
-                <input
-                  className="js-input js-email"
+
+                <Inputs
+                  label="Email"
                   placeholder="Ej: merche@gmail.com"
                   id="email"
                   type="email"
                   name="email"
-                  required
                 />
-                <label htmlFor="phone">Teléfono</label>
+
+                <Inputs
+                  label="Teléfono"
+                  placeholder="Ej: 779744561"
+                  id="phone"
+                  type="number"
+                  name="phone"
+                />
+                {/* <label htmlFor="phone">Teléfono</label>
                 <span className="asterisk">*</span>
                 <input
                   className="js-input js-phone"
@@ -135,20 +141,17 @@ const CustomCard = () => {
                   type="number"
                   name="phone"
                   pattern="[0-9]{9,15}"
-                />
-                <label htmlFor="linkedin">Linkedin</label>
-                <span className="asterisk">*</span>
-                <input
-                  className="js-input js-linkedin"
+                /> */}
+                <Inputs
+                  label="Linkedin"
                   placeholder="Ej: merche"
                   id="linkedin"
                   type="text"
                   name="linkedin"
                 />
-                <label htmlFor="github">Github</label>
-                <span className="asterisk">*</span>
-                <input
-                  className="js-input js-github github"
+
+                <Inputs
+                  label="Github"
                   placeholder="Ej: merchelios"
                   id="github"
                   type="text"
