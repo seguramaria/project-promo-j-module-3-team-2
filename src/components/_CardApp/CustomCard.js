@@ -94,7 +94,6 @@ const CustomCard = (props) => {
                   name="job"
                   handleChangeInput={props.handleChangeInput}
                 />
-
                 <label htmlFor="image">Imagen de perfil</label>
                 <span className="asterisk">*</span>
                 <div className="image-wrapper">
@@ -118,21 +117,21 @@ const CustomCard = (props) => {
                     <div className="profile__preview js__profile-preview"></div>
                   </div>
                 </div>
-
                 <Inputs
                   label="Email"
                   placeholder="Ej: merche@gmail.com"
                   id="email"
                   type="email"
                   name="email"
+                  handleChangeInput={props.handleChangeInput}
                 />
-
                 <Inputs
                   label="Teléfono"
                   placeholder="Ej: 779744561"
                   id="phone"
                   type="number"
                   name="phone"
+                  handleChangeInput={props.handleChangeInput}
                 />
                 {/* <label htmlFor="phone">Teléfono</label>
                 <span className="asterisk">*</span>
@@ -150,14 +149,15 @@ const CustomCard = (props) => {
                   id="linkedin"
                   type="text"
                   name="linkedin"
+                  handleChangeInput={props.handleChangeInput}
                 />
-
                 <Inputs
                   label="Github"
                   placeholder="Ej: merchelios"
                   id="github"
                   type="text"
                   name="github"
+                  handleChangeInput={props.handleChangeInput}
                 />
               </div>
             </section>
