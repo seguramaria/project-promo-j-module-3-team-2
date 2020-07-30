@@ -1,7 +1,8 @@
 import React from "react";
 import "../../index.scss";
 
-const CardPreview = () => {
+const CardPreview = (props) => {
+  console.log(props);
   return (
     <section className="imagen">
       <div>
@@ -15,7 +16,7 @@ const CardPreview = () => {
             <div className="js-square card__top__square-color"></div>
             <div className="card__top__title">
               <div className="js-name-print card__top__title__name">
-                nombre apellido
+                {props.user.name || "Nombre Apellido"}
               </div>
               <div className="js-role card__top__title__role">
                 Front-end developer

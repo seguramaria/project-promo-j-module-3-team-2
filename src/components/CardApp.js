@@ -5,7 +5,7 @@ import Header from "./_CardApp/Header";
 import Main from "./_CardApp/Main";
 
 const CardApp = () => {
-  const [state, setState] = useState({
+  const [user, setUser] = useState({
     palette: 1,
     name: "",
     job: "",
@@ -26,13 +26,30 @@ const CardApp = () => {
   //   }
   // };
 
+  const handleChangeInput = (data) => {
+    user[data.key] = data.value;
+    // user.name = 'foo'
+    // user.job = 'foo'
+    setUser({ ...user });
+  };
+
   return (
     <div className="App">
       <Header />
-      <Main />
+      <Main user={user} handleChangeInput={handleChangeInput} />
       <Footer />
     </div>
   );
 };
 
 export default CardApp;
+
+// const handleChangeInput = (data) => {
+//   console.log("Cmabiando cosas...", data);
+// };
+
+// Main.handleChangeInput = CardApp.handleChangeInput
+
+// CustomCard.handleChangeInput = Main.handleChangeInput
+
+// Inputs.handleChangeInput = CustomCard.handleChangeInput

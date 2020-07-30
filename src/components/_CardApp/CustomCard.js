@@ -3,7 +3,7 @@ import "../../index.scss";
 import Collapse from "./_CustomCard/Collapse";
 import Inputs from "./_CustomCard/_Collapse/Inputs";
 
-const CustomCard = () => {
+const CustomCard = (props) => {
   return (
     <section className="form">
       <div className="wrapper">
@@ -84,6 +84,7 @@ const CustomCard = () => {
                   id="name"
                   type="text"
                   name="name"
+                  handleChangeInput={props.handleChangeInput}
                 />
                 <Inputs
                   label="Puesto"
@@ -91,6 +92,7 @@ const CustomCard = () => {
                   id="job"
                   type="text"
                   name="job"
+                  handleChangeInput={props.handleChangeInput}
                 />
 
                 <label htmlFor="image">Imagen de perfil</label>
