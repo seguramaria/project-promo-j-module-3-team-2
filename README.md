@@ -22,7 +22,7 @@
 4. Añadimos el componente 'Switch' y dentro incluimos las rutas de la página landing (compuesta por 'MainLanding' y 'Footer') y de la página de creación de tarjetas (compuesta por 'Header', 'Main' y 'Footer')
    `<Switch> <Route exact path="/"> <div className="landing"> <MainLanding /> <Footer /> </div> </Route> <Route exact path="/cardApp"> <div className="cardApp"> <Header /> <Main user={user} handleChangeInput={handleChangeInput} /> <Footer /> </div> </Route> </Switch>`
 
-## En MainLanding.js, dónde tenemos el botón que nos lleva a la página de creación de tarjetas
+## En MainLanding.js, dónde tenemos el botón que nos lleva a la página de creación de tarjetas: 
 
 5. Inportamos Link
    `import { Link } from "react-router-dom";`
@@ -30,7 +30,7 @@
 6. Insertamos el compnente 'Link' con la ruta hacia la página de creación de tarjetas
    `<Link to="/cardApp" title="Ir a comenzar"> Comenzar </Link>`
 
-## En Header.js, dónde tenemos el botón que nos lleva a la página landing
+## En Header.js, dónde tenemos el botón que nos lleva a la página landing: 
 
 7. Inportamos Link
    `import { Link } from "react-router-dom";`
