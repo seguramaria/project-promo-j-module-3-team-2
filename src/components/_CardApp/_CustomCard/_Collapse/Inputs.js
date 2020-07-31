@@ -1,8 +1,9 @@
-import React from "react";
-import "../../../../index.scss";
+import React from 'react';
+import '../../../../index.scss';
 
 const Inputs = (props) => {
   const handleChange = (ev) => {
+    ev.preventDefault();
     const target = ev.target;
     const value = target.value;
     const id = target.id;
@@ -13,8 +14,8 @@ const Inputs = (props) => {
   };
   return (
     <div>
-      <label htmlFor="name"> {props.label}</label>
-      <span className="asterisk">*</span>
+      <label htmlFor='name'> {props.label}</label>
+      <span className='asterisk'>*</span>
       <input
         //className='js-input js-name'
         placeholder={props.placeholder}
