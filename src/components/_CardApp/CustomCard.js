@@ -24,7 +24,8 @@ const CustomCard = (props) => {
                         name='style'
                         className='js-input-blue'
                         required
-                        checked={props.handleChangeInput === 'green'}
+                        handleChangeInput={props.handleChangeInput}
+                        checked={props.user.style === '1'}
                       />
                     </div>
                     <div className='colors'>
@@ -44,7 +45,8 @@ const CustomCard = (props) => {
                         name='style'
                         className='js-input-red'
                         required
-                        checked='false'
+                        handleChangeInput={props.handleChangeInput}
+                        checked={props.user.style === '2'}
                       />
                     </div>
                     <div className='colors'>
@@ -63,8 +65,9 @@ const CustomCard = (props) => {
                         value='yellow'
                         name='style'
                         className='js-input-yellow'
-                        checked='false'
                         required
+                        handleChangeInput={props.handleChangeInput}
+                        checked={props.user.style === '3'}
                       />
                     </div>
                     <div className='colors'>

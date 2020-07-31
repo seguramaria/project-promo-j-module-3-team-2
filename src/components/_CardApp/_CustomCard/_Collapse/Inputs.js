@@ -3,14 +3,21 @@ import '../../../../index.scss';
 
 const Inputs = (props) => {
   const handleChange = (ev) => {
-    ev.preventDefault();
+    // ev.preventDefault();
     const target = ev.target;
     const value = target.value;
     const id = target.id;
-    props.handleChangeInput({
-      key: id,
-      value: value,
-    });
+    if (props.name === 'style') {
+      props.handleChangeInput({
+        key: props.name,
+        value: props.id,
+      });
+    } else {
+      props.handleChangeInput({
+        key: id,
+        value: value,
+      });
+    }
   };
   return (
     <div>
