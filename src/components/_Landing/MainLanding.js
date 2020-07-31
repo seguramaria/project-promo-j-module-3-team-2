@@ -1,6 +1,7 @@
-import React from 'react';
-import '../index.scss';
-import LogoLanding from '../images/logo-awesome-profile-cards.svg';
+import React from "react";
+import "../../index.scss";
+import LogoLanding from "../../images/logo-awesome-profile-cards.svg";
+import { Link } from "react-router-dom";
 
 const MainLanding = () => {
   return (
@@ -42,9 +43,12 @@ const MainLanding = () => {
           </article>
         </section>
         <div className="front__button animate__animated animate__pulse">
-          <a href="./mainpage.html" title="Ir a comenzar">
+          {/* <a href="./mainpage.html" title="Ir a comenzar">
             Comenzar
-          </a>
+          </a> */}
+          <Link to="/cardApp" title="Ir a comenzar">
+            Comenzar
+          </Link>
         </div>
       </div>
     </section>

@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './components/CardApp'; //Aquí vamos cambiando la línea (CardApp o Landing) hasta la lección 3.9.
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.scss";
+import CardApp from "./components/CardApp"; //Aquí vamos cambiando la línea (CardApp o Landing) hasta la lección 3.9.
+import { HashRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <HashRouter>
+    <CardApp />
+  </HashRouter>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

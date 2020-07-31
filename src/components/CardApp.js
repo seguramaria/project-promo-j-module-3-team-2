@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import '../index.scss';
-import Footer from './Footer';
-import Header from './_CardApp/Header';
-import Main from './_CardApp/Main';
+import React, { useState } from "react";
+import "../index.scss";
+import Footer from "./Footer";
+import Header from "./_CardApp/Header";
+import Main from "./_CardApp/Main";
+import { Route, Switch } from "react-router-dom";
+// import Landing from "./Landing";
+import MainLanding from "./_Landing/MainLanding";
 
 const CardApp = () => {
   const [user, setUser] = useState({
-    style: '1',
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
+    style: "1",
+    name: "",
+    job: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    github: "",
     // photo: "",
   });
 
@@ -38,10 +41,22 @@ const CardApp = () => {
   // };
 
   return (
-    <div className='App'>
-      <Header />
-      <Main user={user} handleChangeInput={handleChangeInput} />
-      <Footer />
+    <div className="App">
+      <Switch>
+        <Route exact path="/">
+          <div className="landing">
+            <MainLanding />
+            <Footer />
+          </div>
+        </Route>
+        <Route exact path="/cardApp">
+          <div className="cardApp">
+            <Header />
+            <Main user={user} handleChangeInput={handleChangeInput} />
+            <Footer />
+          </div>
+        </Route>
+      </Switch>
     </div>
   );
 };
