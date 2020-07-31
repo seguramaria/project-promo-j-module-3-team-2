@@ -16,14 +16,15 @@ const CustomCard = (props) => {
                 <div className='form__design__style1'>
                   <label className='style-blue'>
                     <div className='option'>
-                      <input
-                        id='style1'
+                      <Inputs
+                        palette='1'
+                        id='1'
                         type='radio'
                         value='green'
                         name='style'
                         className='js-input-blue'
                         required
-                        checked
+                        checked={props.handleChangeInput === 'green'}
                       />
                     </div>
                     <div className='colors'>
@@ -36,13 +37,14 @@ const CustomCard = (props) => {
                 <div className='form__design__style2'>
                   <label className='style-red'>
                     <div className='option'>
-                      <input
-                        id='style2'
+                      <Inputs
+                        id='2'
                         type='radio'
                         value='red'
                         name='style'
                         className='js-input-red'
                         required
+                        checked='false'
                       />
                     </div>
                     <div className='colors'>
@@ -55,12 +57,13 @@ const CustomCard = (props) => {
                 <div className='form__design__style3'>
                   <label className='style-yellow'>
                     <div className='option'>
-                      <input
-                        id='style3'
+                      <Inputs
+                        id='3'
                         type='radio'
-                        value='colorMix'
+                        value='yellow'
                         name='style'
                         className='js-input-yellow'
+                        checked='false'
                         required
                       />
                     </div>
@@ -80,6 +83,7 @@ const CustomCard = (props) => {
               <div className='form__section__signup '>
                 <Inputs
                   label='Nombre Completo'
+                  asterisk='*'
                   placeholder='Ej: Merche Lios'
                   id='name'
                   type='text'
@@ -88,6 +92,7 @@ const CustomCard = (props) => {
                 />
                 <Inputs
                   label='Puesto'
+                  asterisk='*'
                   placeholder='Ej: Front-end'
                   id='job'
                   type='text'
@@ -119,6 +124,7 @@ const CustomCard = (props) => {
                 </div>
                 <Inputs
                   label='Email'
+                  asterisk='*'
                   placeholder='Ej: merche@gmail.com'
                   id='email'
                   type='email'
@@ -127,6 +133,7 @@ const CustomCard = (props) => {
                 />
                 <Inputs
                   label='Teléfono'
+                  asterisk='*'
                   placeholder='Ej: 779744561'
                   id='phone'
                   type='number'
@@ -145,6 +152,7 @@ const CustomCard = (props) => {
                 /> */}
                 <Inputs
                   label='Linkedin'
+                  asterisk='*'
                   placeholder='Ej: merche'
                   id='linkedin'
                   type='text'
@@ -154,6 +162,7 @@ const CustomCard = (props) => {
                 />
                 <Inputs
                   label='Github'
+                  asterisk='*'
                   placeholder='Ej: merchelios'
                   id='github'
                   type='text'

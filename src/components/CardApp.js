@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import "../index.scss";
-import Footer from "./Footer";
-import Header from "./_CardApp/Header";
-import Main from "./_CardApp/Main";
+import React, { useState } from 'react';
+import '../index.scss';
+import Footer from './Footer';
+import Header from './_CardApp/Header';
+import Main from './_CardApp/Main';
 
 const CardApp = () => {
   const [user, setUser] = useState({
-    palette: 1,
-    name: "",
-    job: "",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: "",
+    style: '1',
+    name: '',
+    job: '',
+    email: '',
+    phone: '',
+    linkedin: '',
+    github: '',
     // photo: "",
   });
 
@@ -33,8 +33,12 @@ const CardApp = () => {
     setUser({ ...user });
   };
 
+  // const handleRadioInput = (data) => {
+  //   user[data.key] = data.value;
+  // };
+
   return (
-    <div className="App">
+    <div className='App'>
       <Header />
       <Main user={user} handleChangeInput={handleChangeInput} />
       <Footer />
