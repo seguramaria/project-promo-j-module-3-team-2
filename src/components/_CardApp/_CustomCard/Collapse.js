@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "../../../index.scss";
-import Inputs from "./_Collapse/Inputs";
+import React, { useState } from 'react';
+import '../../../index.scss';
+import Inputs from './_Collapse/Inputs';
 
 function Collapse(props) {
   // const displayPanel = (evt) => props.handleCollapse(evt.currentTarget.id);

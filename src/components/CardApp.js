@@ -13,16 +13,20 @@ const CardApp = () => {
     phone: '',
     linkedin: '',
     github: '',
-    // photo: "",
+    // photo: '',
   });
+
+  // const [collapsible, setCollapsible] = useState(
+  //   (showCollapsible: 'collapse-1')
+  // );
 
   // const handleCollapse = (targetId) => {
   //   //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
   //   //con el valor del colapsable clickado, en caso contrario reseteo el valor del colapsable
-  //   if (targetId !== state.activePanel) {
-  //     setState({ activePanel: targetId });
+  //   if (targetId !== showCollapsible) {
+  //     setCollapsible({ showCollapsible: targetId });
   //   } else {
-  //     setState({ activePanel: "" });
+  //     setCollapsible({ showCollapsible: '' });
   //   }
   // };
 
@@ -40,7 +44,12 @@ const CardApp = () => {
   return (
     <div className="App">
       <Header />
-      <Main user={user} handleChangeInput={handleChangeInput} />
+      <Main
+        user={user}
+        handleChangeInput={handleChangeInput}
+        // collapsible={collapsible}
+        // handleCollapse={handleCollapse}
+      />
       <Footer />
     </div>
   );
