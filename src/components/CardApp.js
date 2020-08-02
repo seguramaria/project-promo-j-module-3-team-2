@@ -38,7 +38,7 @@ const CardApp = () => {
   // };
 
   return (
-    <div className='App'>
+    <div className="App">
       <Header />
       <Main user={user} handleChangeInput={handleChangeInput} />
       <Footer />
