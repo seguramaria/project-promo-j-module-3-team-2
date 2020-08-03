@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import '../index.scss';
-import Footer from './Footer';
-import Header from './_CardApp/Header';
-import Main from './_CardApp/Main';
+import React, { useState } from "react";
+import "../index.scss";
+import Footer from "./Footer";
+import Header from "./_CardApp/Header";
+import Main from "./_CardApp/Main";
 
 const CardApp = () => {
   const [user, setUser] = useState({
-    style: '1',
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
-    // photo: '',
+    style: "1",
+    name: "",
+    job: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    github: "",
+    photo: "",
   });
 
   // const [collapsible, setCollapsible] = useState(

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './GetAvatar.css';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import "./GetAvatar.css";
+import PropTypes from "prop-types";
 
 class GetAvatar extends Component {
   constructor(props) {
@@ -20,13 +20,16 @@ class GetAvatar extends Component {
 
   uploadImage(e) {
     const myFile = e.currentTarget.files[0];
-    this.fr.addEventListener('load', this.getImage);
+    this.fr.addEventListener("load", this.getImage);
     this.fr.readAsDataURL(myFile);
   }
 
   getImage() {
     const image = this.fr.result;
-    this.props.updateAvatar(image);
+    this.props.updateAvatar({
+      key: "photo",
+      value: image,
+    });
   }
 
   getPreview(isDefault, image) {
@@ -34,7 +37,7 @@ class GetAvatar extends Component {
   }
 
   render() {
-    const { isAvatarDefault, avatar } = this.props;
+    const { isAvatarDefault, photo } = this.props;
     return (
       <>
         <label htmlFor="image">Imagen de perfil</label>
@@ -59,7 +62,7 @@ class GetAvatar extends Component {
           <div className="profile">
             <div
               className="profile__preview "
-              style={this.getPreview(isAvatarDefault, avatar)}
+              style={this.getPreview(isAvatarDefault, photo)}
             ></div>
           </div>
         </div>
@@ -70,7 +73,7 @@ class GetAvatar extends Component {
 
 GetAvatar.propTypes = {
   isAvatarDefault: PropTypes.bool.isRequired,
-  avatar: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
   updateAvatar: PropTypes.func.isRequired,
 };
 
