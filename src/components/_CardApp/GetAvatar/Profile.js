@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-import '../../../index.scss';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "../../../index.scss";
 
 class Profile extends Component {
   render() {
     const { photo } = this.props;
-    console.log(this.props.photo);
     return (
-      <div className="profile">
-        <div
-          className="card__photo js-background js__profile-image "
-          style={{ background: `url(${photo})` }}
-          // className="card__photo js-background js__profile-image"
-          // style={{ backgroundImage: photo }}
-        ></div>
-      </div>
+      <div
+        className={
+          "card__photo js-background js__profile-image " +
+          this.props.backgroundClass
+        }
+        style={photo === "" ? {} : { "background-image": `url("${photo}")` }}
+        id="photo"
+        // className="card__photo js-background js__profile-image"
+        // style={{ backgroundImage: photo }}
+      ></div>
     );
   }
 }

@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import '../index.scss';
-import Footer from './Footer';
-import Header from './_CardApp/Header';
-import Main from './_CardApp/Main';
+import React, { useState } from "react";
+import "../index.scss";
+import Footer from "./Footer";
+import Header from "./_CardApp/Header";
+import Main from "./_CardApp/Main";
 
 const CardApp = () => {
   const [user, setUser] = useState({
-    style: '1',
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
-    photo: '',
+    style: "1",
+    name: "",
+    job: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    github: "",
+    photo: "",
     isAvatarDefault: true,
-    profile: { photo: '' },
+    // profile: { photo: '' },
   });
 
   // updateAvatar(img) {
@@ -29,7 +29,7 @@ const CardApp = () => {
   //   });
   // }
 
-  const [collapsible, setCollapsible] = useState('collapse-1');
+  const [collapsible, setCollapsible] = useState("collapse-1");
 
   const handleCollapse = (targetId) => {
     //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
@@ -37,7 +37,7 @@ const CardApp = () => {
     if (targetId !== collapsible) {
       setCollapsible(targetId);
     } else {
-      setCollapsible('');
+      setCollapsible("");
     }
   };
 
