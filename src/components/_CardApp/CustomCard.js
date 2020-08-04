@@ -1,8 +1,8 @@
-import React from "react";
-import "../../index.scss";
-import Collapse from "./_CustomCard/Collapse";
-import Inputs from "./_CustomCard/_Collapse/Inputs";
-import GetAvatar from "./GetAvatar/GetAvatar";
+import React from 'react';
+import '../../index.scss';
+import Collapse from './_CustomCard/Collapse';
+import Inputs from './_CustomCard/_Collapse/Inputs';
+import GetAvatar from './GetAvatar/GetAvatar';
 
 const CustomCard = (props) => {
   return (
@@ -10,7 +10,15 @@ const CustomCard = (props) => {
       <div className="wrapper">
         <form className="js-form">
           {/* DESIGN */}
-          <Collapse icon="far fa-object-ungroup icon" title="Diseña">
+
+          <Collapse
+            handleCollapse={props.handleCollapse}
+            collapsible={props.collapsible}
+            //activePanel={props.activePanel}
+            id="collapse-1"
+            icon="far fa-object-ungroup icon"
+            title="Diseña"
+          >
             <div className="colors-container">
               <span className="form__design__subtitle">colores</span>
               <div className="styles">
@@ -26,7 +34,7 @@ const CustomCard = (props) => {
                         className="js-input-blue"
                         required
                         handleChangeInput={props.handleChangeInput}
-                        checked={props.user.style === "1"}
+                        checked={props.user.style === '1'}
                       />
                     </div>
                     <div className="colors">
@@ -47,7 +55,7 @@ const CustomCard = (props) => {
                         className="js-input-red"
                         required
                         handleChangeInput={props.handleChangeInput}
-                        checked={props.user.style === "2"}
+                        checked={props.user.style === '2'}
                       />
                     </div>
                     <div className="colors">
@@ -68,7 +76,7 @@ const CustomCard = (props) => {
                         className="js-input-yellow"
                         required
                         handleChangeInput={props.handleChangeInput}
-                        checked={props.user.style === "3"}
+                        checked={props.user.style === '3'}
                       />
                     </div>
                     <div className="colors">
@@ -81,8 +89,15 @@ const CustomCard = (props) => {
               </div>
             </div>
           </Collapse>
+
           {/* FILL */}
-          <Collapse title="Rellena" icon="far fa-keyboard icon">
+          <Collapse
+            handleCollapse={props.handleCollapse}
+            collapsible={props.collapsible}
+            id="collapse-2"
+            title="Rellena"
+            icon="far fa-keyboard icon"
+          >
             <section className="form__section">
               <div className="form__section__signup ">
                 <Inputs
@@ -184,7 +199,13 @@ const CustomCard = (props) => {
           </Collapse>
 
           {/* SHARE */}
-          <Collapse icon="fa fa-share-alt icon" title="Comparte">
+          <Collapse
+            handleCollapse={props.handleCollapse}
+            collapsible={props.collapsible}
+            id="collapse-3"
+            icon="fa fa-share-alt icon"
+            title="Comparte"
+          >
             <section className="form__share">
               <div className="form__share__button ">
                 <button

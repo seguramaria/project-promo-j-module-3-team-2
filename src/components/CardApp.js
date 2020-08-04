@@ -1,34 +1,32 @@
-import React, { useState } from "react";
-import "../index.scss";
-import Footer from "./Footer";
-import Header from "./_CardApp/Header";
-import Main from "./_CardApp/Main";
+import React, { useState } from 'react';
+import '../index.scss';
+import Footer from './Footer';
+import Header from './_CardApp/Header';
+import Main from './_CardApp/Main';
 
 const CardApp = () => {
   const [user, setUser] = useState({
-    style: "1",
-    name: "",
-    job: "",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: "",
-    photo: "",
+    style: '1',
+    name: '',
+    job: '',
+    email: '',
+    phone: '',
+    linkedin: '',
+    github: '',
+    photo: '',
   });
 
-  // const [collapsible, setCollapsible] = useState(
-  //   (showCollapsible: 'collapse-1')
-  // );
+  const [collapsible, setCollapsible] = useState('collapse-1');
 
-  // const handleCollapse = (targetId) => {
-  //   //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
-  //   //con el valor del colapsable clickado, en caso contrario reseteo el valor del colapsable
-  //   if (targetId !== showCollapsible) {
-  //     setCollapsible({ showCollapsible: targetId });
-  //   } else {
-  //     setCollapsible({ showCollapsible: '' });
-  //   }
-  // };
+  const handleCollapse = (targetId) => {
+    //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
+    //con el valor del colapsable clickado, en caso contrario reseteo el valor del colapsable
+    if (targetId !== collapsible) {
+      setCollapsible(targetId);
+    } else {
+      setCollapsible('');
+    }
+  };
 
   const handleChangeInput = (data) => {
     user[data.key] = data.value;
@@ -47,8 +45,8 @@ const CardApp = () => {
       <Main
         user={user}
         handleChangeInput={handleChangeInput}
-        // collapsible={collapsible}
-        // handleCollapse={handleCollapse}
+        collapsible={collapsible}
+        handleCollapse={handleCollapse}
       />
       <Footer />
     </div>
