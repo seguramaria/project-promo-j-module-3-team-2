@@ -26,6 +26,7 @@ class GetAvatar extends Component {
 
   getImage() {
     const image = this.fr.result;
+
     this.props.updateAvatar({
       key: 'photo',
       value: image,
@@ -38,6 +39,7 @@ class GetAvatar extends Component {
 
   render() {
     const { isAvatarDefault, photo } = this.props;
+
     return (
       <>
         <label htmlFor="image">Imagen de perfil</label>

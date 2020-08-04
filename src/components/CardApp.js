@@ -14,7 +14,20 @@ const CardApp = () => {
     linkedin: '',
     github: '',
     photo: '',
+    isAvatarDefault: true,
+    profile: { photo: '' },
   });
+
+  // updateAvatar(img) {
+  //   const {profile} = useState;
+  //   setProfile(prevState => {
+  //     const newProfile = {...profile, avatar: img};
+  //     return {
+  //       profile: newProfile,
+  //       isAvatarDefault: false,
+  //     }
+  //   });
+  // }
 
   const [collapsible, setCollapsible] = useState('collapse-1');
 
@@ -45,6 +58,7 @@ const CardApp = () => {
         handleChangeInput={handleChangeInput}
         collapsible={collapsible}
         handleCollapse={handleCollapse}
+        updateAvatar={handleChangeInput}
       />
       <Footer />
     </div>

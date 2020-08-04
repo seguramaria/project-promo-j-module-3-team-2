@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Profile.css';
+
+import '../../../index.scss';
 
 class Profile extends Component {
   render() {
     const { photo } = this.props;
-
+    console.log(this.props.photo);
     return (
       <div className="profile">
         <div
-          className="profile__avatar"
-          style={{ backgroundImage: `url(${photo})` }}
+          className="card__photo js-background js__profile-image "
+          style={{ background: `url(${photo})` }}
           // className="card__photo js-background js__profile-image"
           // style={{ backgroundImage: photo }}
         ></div>
