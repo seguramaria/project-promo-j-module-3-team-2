@@ -11,6 +11,8 @@ const Main = (props) => {
         handleCollapse={props.handleCollapse}
         user={props.user}
         handleChangeInput={props.handleChangeInput}
+        isAvatarDefault={props.isAvatarDefault}
+        updateAvatar={props.handleChangeInput}
       />
       <CardPreview user={props.user} />
     </main>

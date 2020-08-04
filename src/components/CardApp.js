@@ -30,8 +30,6 @@ const CardApp = () => {
 
   const handleChangeInput = (data) => {
     user[data.key] = data.value;
-    // user.name = 'foo'
-    // user.job = 'foo'
     setUser({ ...user });
   };
 

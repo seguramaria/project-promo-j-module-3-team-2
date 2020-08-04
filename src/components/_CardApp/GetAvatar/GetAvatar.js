@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "./GetAvatar.css";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import './GetAvatar.css';
+import PropTypes from 'prop-types';
 
 class GetAvatar extends Component {
   constructor(props) {
@@ -20,14 +20,14 @@ class GetAvatar extends Component {
 
   uploadImage(e) {
     const myFile = e.currentTarget.files[0];
-    this.fr.addEventListener("load", this.getImage);
+    this.fr.addEventListener('load', this.getImage);
     this.fr.readAsDataURL(myFile);
   }
 
   getImage() {
     const image = this.fr.result;
     this.props.updateAvatar({
-      key: "photo",
+      key: 'photo',
       value: image,
     });
   }
@@ -54,6 +54,9 @@ class GetAvatar extends Component {
 
             <input
               type="file"
+              key="photo"
+              name="photo"
+              id="photo"
               ref={this.myFileField}
               className="action__hiddenField js__profile-upload-btn"
               onChange={this.uploadImage}
