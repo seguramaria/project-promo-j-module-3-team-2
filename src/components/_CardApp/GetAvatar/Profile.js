@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import "../../../index.scss";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import '../../../index.scss';
 
 class Profile extends Component {
   render() {
@@ -8,10 +8,10 @@ class Profile extends Component {
     return (
       <div
         className={
-          "card__photo js-background js__profile-image " +
+          'card__photo js-background js__profile-image ' +
           this.props.backgroundClass
         }
-        style={photo === "" ? {} : { "background-image": `url("${photo}")` }}
+        style={photo === '' ? {} : { backgroundImage: `url("${photo}")` }}
         id="photo"
         // className="card__photo js-background js__profile-image"
         // style={{ backgroundImage: photo }}

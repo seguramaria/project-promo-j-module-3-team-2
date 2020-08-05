@@ -1,10 +1,15 @@
-import React from "react";
-import "../../index.scss";
-import Collapse from "./_CustomCard/Collapse";
-import Inputs from "./_CustomCard/_Collapse/Inputs";
-import GetAvatar from "./GetAvatar/GetAvatar";
+import React from 'react';
+import '../../index.scss';
+import Collapse from './_CustomCard/Collapse';
+import Inputs from './_CustomCard/_Collapse/Inputs';
+import GetAvatar from './GetAvatar/GetAvatar';
 
 const CustomCard = (props) => {
+  const handleFetchCardData = (ev) => {
+    ev.preventDefault();
+    props.fetchCardData();
+  };
+
   return (
     <section className="form">
       <div className="wrapper">
@@ -34,7 +39,7 @@ const CustomCard = (props) => {
                         className="js-input-blue"
                         required
                         handleChangeInput={props.handleChangeInput}
-                        checked={props.user.style === "1"}
+                        checked={props.user.style === '1'}
                       />
                     </div>
                     <div className="colors">
@@ -55,7 +60,7 @@ const CustomCard = (props) => {
                         className="js-input-red"
                         required
                         handleChangeInput={props.handleChangeInput}
-                        checked={props.user.style === "2"}
+                        checked={props.user.style === '2'}
                       />
                     </div>
                     <div className="colors">
@@ -76,7 +81,7 @@ const CustomCard = (props) => {
                         className="js-input-yellow"
                         required
                         handleChangeInput={props.handleChangeInput}
-                        checked={props.user.style === "3"}
+                        checked={props.user.style === '3'}
                       />
                     </div>
                     <div className="colors">
@@ -120,9 +125,10 @@ const CustomCard = (props) => {
                 />
                 <GetAvatar
                   photo={props.user.photo}
-                  isAvatarDefault={props.isAvatarDefault}
+                  isAvatarDefault={props.user.isAvatarDefault}
                   updateAvatar={props.handleChangeInput}
                 />
+
                 {/* <label htmlFor='image'>Imagen de perfil</label>
                 <span className='asterisk'>*</span>
                 <div className='image-wrapper'>
@@ -211,7 +217,8 @@ const CustomCard = (props) => {
                 <button
                   type="submit"
                   value="Enviar"
-                  className="js-share share form__share__button__button inactive"
+                  className={`form__share__button__button ${props.availableButton}`}
+                  onClick={handleFetchCardData}
                 >
                   <i className="far fa-address-card"></i>
                   crear tarjeta
@@ -222,10 +229,12 @@ const CustomCard = (props) => {
                   ✨ Aquí tienes tu tarjeta de visita Sailor Code ✨
                 </p>
                 <a
-                  href="https://twitter.com/login"
+                  href={props.user.url}
                   className="js-twitter-url twitter-url response"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
-                  https://twitter.com/login
+                  {props.user.url}
                 </a>
                 <a
                   className="twitter-share-button"
