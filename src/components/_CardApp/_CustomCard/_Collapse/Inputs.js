@@ -32,6 +32,7 @@ const Inputs = (props) => {
         name={props.name}
         onChange={handleChange}
         checked={props.checked}
+        value={props.value}
         required
       />
     </div>
