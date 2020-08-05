@@ -1,12 +1,19 @@
-import React from "react";
-import "../../index.scss";
-import CustomCard from "./CustomCard";
-import CardPreview from "./CardPreview";
+import React from 'react';
+import '../../index.scss';
+import CustomCard from './CustomCard';
+import CardPreview from './CardPreview';
 
 const Main = (props) => {
   return (
     <main className="page__main">
-      <CustomCard user={props.user} handleChangeInput={props.handleChangeInput} />
+      <CustomCard
+        collapsible={props.collapsible}
+        handleCollapse={props.handleCollapse}
+        user={props.user}
+        handleChangeInput={props.handleChangeInput}
+        isAvatarDefault={props.isAvatarDefault}
+        updateAvatar={props.handleChangeInput}
+      />
       <CardPreview user={props.user} />
     </main>
   );

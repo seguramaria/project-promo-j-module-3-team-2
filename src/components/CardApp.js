@@ -1,38 +1,51 @@
-import React, { useState } from "react";
-import "../index.scss";
-import Footer from "./Footer";
-import Header from "./_CardApp/Header";
-import Main from "./_CardApp/Main";
-import { Route, Switch } from "react-router-dom";
+import React, { useState } from 'react';
+import '../index.scss';
+import Footer from './Footer';
+import Header from './_CardApp/Header';
+import Main from './_CardApp/Main';
+import { Route, Switch } from 'react-router-dom';
 // import Landing from "./Landing";
-import MainLanding from "./_Landing/MainLanding";
+import MainLanding from './_Landing/MainLanding';
 
 const CardApp = () => {
   const [user, setUser] = useState({
-    style: "1",
-    name: "",
-    job: "",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: "",
-    // photo: "",
+    style: '1',
+    name: '',
+    job: '',
+    email: '',
+    phone: '',
+    linkedin: '',
+    github: '',
+    photo: '',
+    isAvatarDefault: true,
+    // profile: { photo: '' },
   });
 
-  // const handleCollapse = (targetId) => {
-  //   //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
-  //   //con el valor del colapsable clickado, en caso contrario reseteo el valor del colapsable
-  //   if (targetId !== state.activePanel) {
-  //     setState({ activePanel: targetId });
-  //   } else {
-  //     setState({ activePanel: "" });
-  //   }
-  // };
+  // updateAvatar(img) {
+  //   const {profile} = useState;
+  //   setProfile(prevState => {
+  //     const newProfile = {...profile, avatar: img};
+  //     return {
+  //       profile: newProfile,
+  //       isAvatarDefault: false,
+  //     }
+  //   });
+  // }
+
+  const [collapsible, setCollapsible] = useState('collapse-1');
+
+  const handleCollapse = (targetId) => {
+    //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
+    //con el valor del colapsable clickado, en caso contrario reseteo el valor del colapsable
+    if (targetId !== collapsible) {
+      setCollapsible(targetId);
+    } else {
+      setCollapsible('');
+    }
+  };
 
   const handleChangeInput = (data) => {
     user[data.key] = data.value;
-    // user.name = 'foo'
-    // user.job = 'foo'
     setUser({ ...user });
   };
 
@@ -52,7 +65,13 @@ const CardApp = () => {
         <Route exact path="/cardApp">
           <div className="cardApp">
             <Header />
-            <Main user={user} handleChangeInput={handleChangeInput} />
+            <Main
+              user={user}
+              handleChangeInput={handleChangeInput}
+              collapsible={collapsible}
+              handleCollapse={handleCollapse}
+              updateAvatar={handleChangeInput}
+            />
             <Footer />
           </div>
         </Route>
