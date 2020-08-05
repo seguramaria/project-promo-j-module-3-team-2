@@ -8,7 +8,7 @@ import MainLanding from './_Landing/MainLanding';
 
 const CardApp = () => {
   const userLocalStorage = JSON.parse(localStorage.getItem('user_card'));
-  debugger;
+
   const defaultUser = {
     style: '1',
     name: '',
@@ -143,16 +143,16 @@ const CardApp = () => {
   ////////////
 
   return (
-    <div className="App">
+    <div className='App'>
       <Switch>
-        <Route exact path="/">
-          <div className="landing">
+        <Route exact path='/'>
+          <div className='landing'>
             <MainLanding />
             <Footer />
           </div>
         </Route>
-        <Route exact path="/cardApp">
-          <div className="cardApp">
+        <Route exact path='/cardApp'>
+          <div className='cardApp'>
             <Header />
             <Main
               user={user}
