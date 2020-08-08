@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import '../index.scss';
-import Footer from './Footer';
-import Header from './_CardApp/Header';
-import Main from './_CardApp/Main';
-import { Route, Switch } from 'react-router-dom';
-import MainLanding from './_Landing/MainLanding';
+import React, { useState } from "react";
+import "../index.scss";
+import Footer from "./Footer";
+import Header from "./_CardApp/Header";
+import Main from "./_CardApp/Main";
+import { Route, Switch } from "react-router-dom";
+import MainLanding from "./_Landing/MainLanding";
 
 const CardApp = () => {
-  const userLocalStorage = JSON.parse(localStorage.getItem('user_card'));
+  const userLocalStorage = JSON.parse(localStorage.getItem("user_card"));
 
   const defaultUser = {
-    style: '1',
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
-    photo: '',
-    isAvatarDefault: true,
-    url: '',
+    style: "1",
+    name: "",
+    job: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    github: "",
+    photo: "",
+    // isAvatarDefault: true,
+    url: "",
   };
   const [user, setUser] = useState(
     userLocalStorage ? userLocalStorage : defaultUser
   );
 
-  const [collapsible, setCollapsible] = useState('collapse-1');
+  const [collapsible, setCollapsible] = useState("collapse-1");
 
   const handleCollapse = (targetId) => {
     //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
@@ -33,14 +33,20 @@ const CardApp = () => {
     if (targetId !== collapsible) {
       setCollapsible(targetId);
     } else {
-      setCollapsible('');
+      setCollapsible("");
     }
   };
 
-  const handleChangeInput = (data) => {
-    user[data.key] = data.value;
-    localStorage.setItem('user_card', JSON.stringify(user));
-    setUser({ ...user });
+  const handleChangeInput = (data, isReset) => {
+    let newUser;
+    if (isReset) {
+      newUser = defaultUser;
+    } else {
+      newUser = { ...user };
+      newUser[data.key] = data.value;
+    }
+    localStorage.setItem("user_card", JSON.stringify(newUser));
+    setUser({ ...newUser });
   };
 
   // const validateButton = () => {
@@ -71,23 +77,25 @@ const CardApp = () => {
 
   const fetchCardData = () => {
     /* const json = {
-      email: 'saraalite@gmail.com',
-      github: 'saraalite',
-      job: 'sdfsd',
-      linkedin: 'sergio-valero-garcia',
-      name: 'fsdfs',
-      palette: '1',
-      phone: '653851305',
-      photo: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD',
-    };
- */
+      email: "saraalite@gmail.com",
+      github: "saraalite",
+      job: "sdfsd",
+      linkedin: "sara",
+      name: "fsdfs",
+      palette: "2",
+      phone: "656871305",
+      photo: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+    }; */
     // const json = JSON.parse(localStorage.getItem('user'));
     // fetchCardData(json).then((result) => setURL(result));
-    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-      method: 'POST',
-      body: JSON.stringify(user),
+
+    const parsedUser = { ...user, palette: user.style };
+
+    fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
+      method: "POST",
+      body: JSON.stringify(parsedUser),
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
     })
       .then(function (resp) {
@@ -95,7 +103,7 @@ const CardApp = () => {
       })
       .then(function (result) {
         const url = {
-          key: 'url',
+          key: "url",
           value: result.cardURL,
         };
         handleChangeInput(url);
@@ -116,7 +124,7 @@ const CardApp = () => {
   //   });
   // }, []);
 
-  const setURL = (result) => {
+  /* const setURL = (result) => {
     if (result.success) {
       setUser({
         cardSuccess: true,
@@ -130,7 +138,7 @@ const CardApp = () => {
         // isLoading: false,
       });
     }
-  };
+  }; */
 
   // const handleError = (error) => {
   //   setUser({
@@ -143,16 +151,16 @@ const CardApp = () => {
   ////////////
 
   return (
-    <div className='App'>
+    <div className="App">
       <Switch>
-        <Route exact path='/'>
-          <div className='landing'>
+        <Route exact path="/">
+          <div className="landing">
             <MainLanding />
             <Footer />
           </div>
         </Route>
-        <Route exact path='/cardApp'>
-          <div className='cardApp'>
+        <Route exact path="/cardApp">
+          <div className="cardApp">
             <Header />
             <Main
               user={user}

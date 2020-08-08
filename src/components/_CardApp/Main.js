@@ -1,11 +1,11 @@
-import React from 'react';
-import '../../index.scss';
-import CustomCard from './CustomCard';
-import CardPreview from './CardPreview';
+import React from "react";
+import "../../index.scss";
+import CustomCard from "./CustomCard";
+import CardPreview from "./CardPreview";
 
 const Main = (props) => {
   return (
-    <main className='page__main'>
+    <main className="page__main">
       <CustomCard
         user={props.user}
         handleChangeInput={props.handleChangeInput}
@@ -14,7 +14,10 @@ const Main = (props) => {
         updateAvatar={props.handleChangeInput}
         fetchCardData={props.fetchCardData}
       />
-      <CardPreview user={props.user} />
+      <CardPreview
+        user={props.user}
+        handleChangeInput={props.handleChangeInput}
+      />
     </main>
   );
 };

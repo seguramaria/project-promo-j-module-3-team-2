@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './GetAvatar.css';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import "./GetAvatar.css";
+import PropTypes from "prop-types";
 
 class GetAvatar extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class GetAvatar extends Component {
 
   uploadImage(e) {
     const myFile = e.currentTarget.files[0];
-    this.fr.addEventListener('load', this.getImage);
+    this.fr.addEventListener("load", this.getImage);
     this.fr.readAsDataURL(myFile);
   }
 
@@ -29,46 +29,47 @@ class GetAvatar extends Component {
     const image = this.fr.result;
 
     this.props.updateAvatar({
-      key: 'photo',
+      key: "photo",
       value: image,
     });
   }
 
-  getPreview(isDefault, image) {
-    return !isDefault ? { backgroundImage: `url(${image})` } : {};
+  getPreview(image) {
+    return image ? { backgroundImage: `url(${image})` } : {};
   }
 
   render() {
-    const { isAvatarDefault, photo } = this.props;
+    // const { isAvatarDefault, photo } = this.props;
+    const { photo } = this.props;
 
     return (
       <>
-        <label htmlFor='image'>Imagen de perfil</label>
-        <span className='asterisk'>*</span>
-        <div className='image-wrapper'>
-          <div className='action'>
+        <label htmlFor="image">Imagen de perfil</label>
+        <span className="asterisk">*</span>
+        <div className="image-wrapper">
+          <div className="action">
             <button
-              className='btn-img action__upload-btn js__profile-trigger'
-              type='button'
+              className="btn-img action__upload-btn js__profile-trigger"
+              type="button"
               onClick={this.handleFilePicker}
             >
               Añadir imagen
             </button>
 
             <input
-              type='file'
-              key='photo'
-              name='photo'
-              id='photo'
+              type="file"
+              key="photo"
+              name="photo"
+              id="photo"
               ref={this.myFileField}
-              className='action__hiddenField js__profile-upload-btn'
+              className="action__hiddenField js__profile-upload-btn"
               onChange={this.uploadImage}
             />
           </div>
-          <div className='profile'>
+          <div className="profile">
             <div
-              className='profile__preview '
-              style={this.getPreview(isAvatarDefault, photo)}
+              className="profile__preview "
+              style={this.getPreview(photo)}
             ></div>
           </div>
         </div>

@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import '../../../index.scss';
-import Inputs from './_Collapse/Inputs';
-
+import React from "react";
+import "../../../index.scss";
 function Collapse(props) {
   const displayPanel = (evt) => props.handleCollapse(evt.currentTarget.id);
 
@@ -21,7 +19,7 @@ function Collapse(props) {
       </div>
       <div
         className={`collapsible-container ${
-          props.collapsible === props.id ? '' : 'hidden'
+          props.collapsible === props.id ? "" : "hidden"
         }`}
       >
         {props.children}
