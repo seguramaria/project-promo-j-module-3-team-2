@@ -1,6 +1,6 @@
 import React from "react";
 import "../../index.scss";
-import LogoLanding from "../../images/logo-awesome-profile-cards.svg";
+import LogoLanding from "../../images/logo-awesome-profile-cards-2.svg";
 import { Link } from "react-router-dom";
 
 const MainLanding = () => {

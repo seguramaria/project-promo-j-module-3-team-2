@@ -1,6 +1,6 @@
 .main {
   height: 88vh;
-  background-image: url('../images/sailor-noche.jpg');
+  background-image: url("../images/sailor-noche.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -74,7 +74,7 @@
     width: 129px;
     height: 42px;
     line-height: 21.5px;
-    background-color: $color-primary-medium;
+    background-color: $color-brand-primary;
     color: $color-light;
     text-align: center;
     text-transform: uppercase;
@@ -85,7 +85,7 @@
     &:hover {
       animation: pulse 0.5s;
       animation-iteration-count: infinite;
-      background-color: $color-accenture;
+      background-color: $color-brand-secondary;
     }
 
     @include tablet {

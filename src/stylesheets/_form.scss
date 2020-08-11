@@ -47,6 +47,7 @@
 
       .colors {
         display: flex;
+
         & .square {
           width: 30px;
           height: 25px;
@@ -54,6 +55,7 @@
         }
         .one {
           background-color: $color-primary-dark;
+          margin-left: 10px;
         }
         .two {
           background-color: $color-primary-medium;
@@ -81,6 +83,7 @@
         }
         .one {
           background-color: #420101;
+          margin-left: 10px;
         }
         .two {
           background-color: #bd1010;
@@ -108,6 +111,7 @@
         }
         .one {
           background-color: #3e5b65;
+          margin-left: 10px;
         }
         .two {
           background-color: #eab052;
@@ -175,7 +179,8 @@
 // COMPARTE
 .form__share__button {
   &__button {
-    background-color: $color-grey-button;
+    background-color: $color-accenture;
+    cursor: pointer;
     margin: 60px auto auto 60px;
     width: 199px;
     height: 50px;
@@ -189,6 +194,9 @@
     font-weight: 400;
     margin-bottom: 30px;
   }
+}
+.fa-address-card {
+  margin-right: 9px;
 }
 
 .twitter {
@@ -250,7 +258,7 @@
   }
   &:hover {
     background-color: $color-medium-yellow;
-    cursor: url('../images/cursor-sailor.png'), auto;
+    cursor: url("../images/cursor-sailor.png"), auto;
   }
 }
 .inactive {

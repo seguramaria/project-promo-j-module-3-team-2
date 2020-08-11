@@ -1,34 +1,8 @@
 import React from "react";
 import "../../index.scss";
 import Profile from "./GetAvatar/Profile";
-
+import IconReset from "../../images/basura.svg";
 const CardPreview = (props) => {
-  /* 
-    Clases js que usaban para pintar de otro color:
-
-      const colorName = document.querySelector('.js-name-print');
-      const colorIcons = document.querySelectorAll('.js-icon');
-      const colorLeftSquare = document.querySelector('.js-square');
-      const colorBorder = document.querySelectorAll('.js-border');
-      const colorBackground = document.querySelector('.js-background');
-  
-    Elementos del array que utilizaban para cada parte. 
-    Ejemplo: palette[0] puede ser: 'style-blue-dark', 'style-red-dark' o 'style-yellow-dark'
-    
-      colorName.classList.add(palette[0]);
-      icon.classList.add(palette[0]); //colorIcons
-      colorLeftSquare.classList.add(palette[1]);
-      border.classList.add(palette[2]); //colorBorder
-      colorBackground.classList.add(palette[3]);
-
-    
-    Los iconos se trataban ligeramente diferente:
-    
-    colorIconBackgroundLinkedin.classList.remove('style-blue-background-icon');
-    const colorIconBackgroundLinkedin = document.querySelector(
-      '.js-background-linkedin'
-    );
-    */
   const palettes = [
     {
       nameAndIcon: " style-blue-dark",
@@ -58,14 +32,13 @@ const CardPreview = (props) => {
     props.handleChangeInput("", true);
   };
 
-  // Con esto parseamos nuestro style para que sea un número y le restamos uno para que concuerde con el elemento del array al que corresponde
   const styleToNumber = parseInt(props.user.style) - 1;
 
   return (
     <section className="imagen">
       <div>
-        <button onClick={handleReset} className="button__reset js-reset-button">
-          <img className="img-button" src="./assets/images/basura.svg" alt="" />
+        <button onClick={handleReset} className="button__reset">
+          <img className="img-button" src={IconReset} alt="basura icon" />
           <p className="button__reset--word">reset</p>
         </button>
 
@@ -73,20 +46,18 @@ const CardPreview = (props) => {
           <div className="card__top">
             <div
               className={
-                "js-square card__top__square-color" +
-                palettes[styleToNumber].leftSquare
+                "card__top__square-color" + palettes[styleToNumber].leftSquare
               }
             ></div>
             <div className="card__top__title">
               <div
                 className={
-                  "js-name-print card__top__title__name" +
-                  palettes[styleToNumber].nameAndIcon
+                  "card__top__title__name" + palettes[styleToNumber].nameAndIcon
                 }
               >
                 {props.user.name || "Nombre Apellido"}
               </div>
-              <div className="js-role card__top__title__role">
+              <div className="card__top__title__role">
                 {props.user.job || "Front-end developer"}
               </div>
             </div>
@@ -97,19 +68,11 @@ const CardPreview = (props) => {
             backgroundClass={palettes[styleToNumber].background}
           />
 
-          {/* <div
-            className={
-              "card__photo js-background js__profile-image " +
-              palettes[styleToNumber].background
-            }
-            id="photo"
-          ></div>
- */}
           <div className="card__bottom">
             <ul className="card__bottom__list">
               <li
                 className={
-                  "card__bottom__list__li js-border js-background-phone" +
+                  "card__bottom__list__li" +
                   palettes[styleToNumber].border +
                   `${
                     props.user.phone !== ""
@@ -122,11 +85,10 @@ const CardPreview = (props) => {
                   href={"tel:" + props.user.phone || " "}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="js-phone-icon"
                 >
                   <i
                     className={
-                      "js-icon icon fas fa-mobile-alt" +
+                      "icon fas fa-mobile-alt" +
                       palettes[styleToNumber].nameAndIcon
                     }
                   ></i>
@@ -134,7 +96,7 @@ const CardPreview = (props) => {
               </li>
               <li
                 className={
-                  "js-border js-background-email card__bottom__list__li" +
+                  "card__bottom__list__li" +
                   palettes[styleToNumber].border +
                   `${
                     props.user.email !== ""
@@ -147,11 +109,10 @@ const CardPreview = (props) => {
                   href={"mailto:" + props.user.email || " "}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="js-email-icon"
                 >
                   <i
                     className={
-                      "js-icon icon far fa-envelope " +
+                      "icon far fa-envelope " +
                       palettes[styleToNumber].nameAndIcon
                     }
                   ></i>
@@ -159,7 +120,7 @@ const CardPreview = (props) => {
               </li>
               <li
                 className={
-                  "js-border js-background-linkedin card__bottom__list__li" +
+                  "card__bottom__list__li" +
                   palettes[styleToNumber].border +
                   `${
                     props.user.linkedin !== ""
@@ -174,11 +135,10 @@ const CardPreview = (props) => {
                   }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="js-linkedin-email js-linkedin-print"
                 >
                   <i
                     className={
-                      "js-icon icon fab fa-linkedin-in " +
+                      "icon fab fa-linkedin-in " +
                       palettes[styleToNumber].nameAndIcon
                     }
                   ></i>
@@ -186,7 +146,7 @@ const CardPreview = (props) => {
               </li>
               <li
                 className={
-                  "js-border js-background-github card__bottom__list__li" +
+                  "card__bottom__list__li" +
                   palettes[styleToNumber].border +
                   `${
                     props.user.github !== ""
@@ -199,11 +159,10 @@ const CardPreview = (props) => {
                   href={"https://github.com/" + props.user.github || " "}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="js-github-print"
                 >
                   <i
                     className={
-                      "js-icon icon fab fa-github-alt" +
+                      "icon fab fa-github-alt" +
                       palettes[styleToNumber].nameAndIcon
                     }
                   ></i>

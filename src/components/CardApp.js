@@ -28,8 +28,6 @@ const CardApp = () => {
   const [collapsible, setCollapsible] = useState("collapse-1");
 
   const handleCollapse = (targetId) => {
-    //si el colapsable que he clickado es distinto que el guardado en el estado, seteo de nuevo el estado
-    //con el valor del colapsable clickado, en caso contrario reseteo el valor del colapsable
     if (targetId !== collapsible) {
       setCollapsible(targetId);
     } else {
@@ -49,46 +47,7 @@ const CardApp = () => {
     setUser({ ...newUser });
   };
 
-  // const validateButton = () => {
-  //   const {
-  //     name,
-  //     job,
-  //     email,
-  //     linkedin,
-  //     github,
-  //     phone,
-  //     photo,
-  //   } = this.state.userInfo;
-
-  //   if (
-  //     name !== '' &&
-  //     job !== '' &&
-  //     email !== '' &&
-  //     linkedin !== '' &&
-  //     github !== '' &&
-  //     phone !== '' &&
-  //     photo !== ''
-  //   ) {
-  //     return 'available';
-  //   } else {
-  //     return 'disable';
-  //   }
-  // };
-
   const fetchCardData = () => {
-    /* const json = {
-      email: "saraalite@gmail.com",
-      github: "saraalite",
-      job: "sdfsd",
-      linkedin: "sara",
-      name: "fsdfs",
-      palette: "2",
-      phone: "656871305",
-      photo: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-    }; */
-    // const json = JSON.parse(localStorage.getItem('user'));
-    // fetchCardData(json).then((result) => setURL(result));
-
     const parsedUser = { ...user, palette: user.style };
 
     fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
@@ -111,44 +70,7 @@ const CardApp = () => {
       .catch(function (error) {
         console.log(error);
       });
-
-    // .catch((error) => handleError(error));
-    // setUser({
-    //   isLoading: true,
-    // });
   };
-  // useEffect(() => {
-  //   fetchCardData().then((result) => {
-  //     setURL(result);
-  //     console.log('result');
-  //   });
-  // }, []);
-
-  /* const setURL = (result) => {
-    if (result.success) {
-      setUser({
-        cardSuccess: true,
-        cardURL: result.cardURL,
-
-        // isLoading: false,
-      });
-    } else {
-      setUser({
-        cardSuccess: false,
-        // isLoading: false,
-      });
-    }
-  }; */
-
-  // const handleError = (error) => {
-  //   setUser({
-  //     cardSuccess: false,
-  //     cardURL: error,
-  //     isLoading: false,
-  //   });
-  // };
-
-  ////////////
 
   return (
     <div className="App">
@@ -179,13 +101,3 @@ const CardApp = () => {
 };
 
 export default CardApp;
-
-// const handleChangeInput = (data) => {
-//   console.log("Cmabiando cosas...", data);
-// };
-
-// Main.handleChangeInput = CardApp.handleChangeInput
-
-// CustomCard.handleChangeInput = Main.handleChangeInput
-
-// Inputs.handleChangeInput = CustomCard.handleChangeInput

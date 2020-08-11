@@ -13,7 +13,7 @@ const CustomCard = (props) => {
   return (
     <section className="form">
       <div className="wrapper">
-        <form className="js-form">
+        <form>
           {/* DESIGN */}
 
           <Collapse
@@ -36,7 +36,6 @@ const CustomCard = (props) => {
                         type="radio"
                         value="green"
                         name="style"
-                        className="js-input-blue"
                         required
                         handleChangeInput={props.handleChangeInput}
                         checked={props.user.style === "1"}
@@ -57,7 +56,6 @@ const CustomCard = (props) => {
                         type="radio"
                         value="red"
                         name="style"
-                        className="js-input-red"
                         required
                         handleChangeInput={props.handleChangeInput}
                         checked={props.user.style === "2"}
@@ -78,7 +76,6 @@ const CustomCard = (props) => {
                         type="radio"
                         value="yellow"
                         name="style"
-                        className="js-input-yellow"
                         required
                         handleChangeInput={props.handleChangeInput}
                         checked={props.user.style === "3"}
@@ -198,13 +195,13 @@ const CustomCard = (props) => {
                   crear tarjeta
                 </button>
               </div>
-              <div className="js-input js-twitter twitter ">
-                <p className="js-twiter-paragraph twitter-paragraph">
+              <div className=" twitter ">
+                <p className=" twitter-paragraph">
                   ✨ Aquí tienes tu tarjeta de visita Sailor Code ✨
                 </p>
                 <a
                   href={props.user.url}
-                  className="js-twitter-url twitter-url response"
+                  className="twitter-url response"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

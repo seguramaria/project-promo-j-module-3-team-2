@@ -2,17 +2,15 @@
   width: 320px;
   position: relative;
   margin: auto;
-  // border-top: 1px solid $color-form-medium; RELLENA, COMPARTE
-  // margin-bottom: 60px; COMPARTE
-
+  border-bottom: 1px solid $color-form-medium;
+  padding-bottom: 30px;
   &__clickable--container {
     display: flex;
-
+    align-items: center;
     .icon {
       width: 21px;
       height: 18px;
       color: $color-accenture;
-      margin-bottom: 10px;
       line-height: normal;
     }
 
@@ -64,8 +62,8 @@
     font-family: $font-primary;
     font-weight: 600;
     font-size: rem(18);
-
-    // margin-top: 10px; RELLENA, COMPARTE
+    margin-left: 12.5px;
+    padding: 10px; //RELLENA, COMPARTE
   }
 }
 
