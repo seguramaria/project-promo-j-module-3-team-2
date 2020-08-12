@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a97e5666d244bdf958b0b4cefe663b27",
+    "revision": "bab3d1d4ffc7a254f9b6f007d368a45c",
     "url": "./index.html"
   },
   {
-    "revision": "b29cda79ef97f1663f57",
-    "url": "./static/css/main.7df09045.chunk.css"
+    "revision": "f84dd0a535466fc32bf7",
+    "url": "./static/css/main.afd45c65.chunk.css"
   },
   {
     "revision": "488b3db5c6b77cce3667",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/js/2.ff8538e6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b29cda79ef97f1663f57",
-    "url": "./static/js/main.7ea09b42.chunk.js"
+    "revision": "f84dd0a535466fc32bf7",
+    "url": "./static/js/main.a823fd4e.chunk.js"
   },
   {
     "revision": "aa31d445de8c4a269e93",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e6ef284d948d4107275581ce9cd34956",
     "url": "./static/media/azul.e6ef284d.svg"
+  },
+  {
+    "revision": "f96983d5c67127fad36ec8c8ff202031",
+    "url": "./static/media/bananasprint-logo.f96983d5.png"
   },
   {
     "revision": "22b055177be29fc742ec244edcd50db8",
