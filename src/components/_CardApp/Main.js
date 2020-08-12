@@ -1,7 +1,7 @@
-import React from "react";
-import "../../index.scss";
-import CustomCard from "./CustomCard";
-import CardPreview from "./CardPreview";
+import React from 'react';
+import '../../index.scss';
+import CustomCard from './CustomCard';
+import CardPreview from './CardPreview';
 
 const Main = (props) => {
   return (
@@ -13,6 +13,7 @@ const Main = (props) => {
         handleCollapse={props.handleCollapse}
         updateAvatar={props.handleChangeInput}
         fetchCardData={props.fetchCardData}
+        activeShare={props.activeShare}
       />
       <CardPreview
         user={props.user}

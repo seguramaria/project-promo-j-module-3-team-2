@@ -26,6 +26,7 @@ const CardApp = () => {
   );
 
   const [collapsible, setCollapsible] = useState('collapse-1');
+  const [activeShare, setActiveShare] = useState('hidden');
 
   const handleCollapse = (targetId) => {
     if (targetId !== collapsible) {
@@ -39,6 +40,7 @@ const CardApp = () => {
     let newUser;
     if (isReset) {
       newUser = defaultUser;
+      setActiveShare('hidden');
     } else {
       newUser = { ...user };
       newUser[data.key] = data.value;
@@ -66,6 +68,7 @@ const CardApp = () => {
           value: result.cardURL,
         };
         handleChangeInput(url);
+        setActiveShare('');
       })
       .catch(function (error) {
         console.log(error);
@@ -73,16 +76,16 @@ const CardApp = () => {
   };
 
   return (
-    <div className='App'>
+    <div className="App">
       <Switch>
-        <Route exact path='/'>
-          <div className='landing'>
+        <Route exact path="/">
+          <div className="landing">
             <MainLanding />
             <Footer />
           </div>
         </Route>
-        <Route exact path='/cardApp'>
-          <div className='cardApp'>
+        <Route exact path="/cardApp">
+          <div className="cardApp">
             <Header />
             <Main
               user={user}
@@ -91,6 +94,7 @@ const CardApp = () => {
               handleCollapse={handleCollapse}
               updateAvatar={handleChangeInput}
               fetchCardData={fetchCardData}
+              activeShare={activeShare}
             />
             <Footer />
           </div>
