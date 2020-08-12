@@ -23,6 +23,7 @@
     margin-top: 22px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 30px;
   }
   .form__design {
     &__subtitle {
@@ -126,6 +127,7 @@
 
 // RELLENA
 .form__section {
+  padding-bottom: 30px;
   &__signup {
     flex-direction: row;
     justify-content: flex-start;
@@ -197,6 +199,7 @@
 }
 .fa-address-card {
   margin-right: 9px;
+  cursor: pointer;
 }
 
 .twitter {
@@ -205,6 +208,7 @@
   align-items: center;
   border-top: 1px solid $color-form-medium;
   border-bottom: 1px solid $color-form-medium;
+
   &-paragraph {
     margin-top: 15px;
     text-align: center;
@@ -233,15 +237,20 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    cursor: pointer;
     &:hover {
       background-color: $color-accenture;
       //cursor: pointer;
     }
-    .fa-twitter {
-      margin-right: 9.5px;
-      width: 18px;
-      height: 18px;
-      padding-top: 1px;
+    .twitter-link {
+      cursor: pointer;
+      .fa-twitter {
+        margin-right: 9.5px;
+        width: 18px;
+        height: 18px;
+        padding-top: 1px;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -258,7 +267,7 @@
   }
   &:hover {
     background-color: $color-medium-yellow;
-    cursor: url("../images/cursor-sailor.png"), auto;
+    cursor: url('../images/cursor-sailor.png'), auto;
   }
 }
 .inactive {

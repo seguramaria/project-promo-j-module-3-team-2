@@ -1,9 +1,9 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 .page__main {
   min-height: 800px;
-  background-image: url("../images/fondo.jpg");
+  background-image: url('../images/fondo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -74,9 +74,11 @@
   font-family: $font-primary;
   font-size: 12px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .img-button {
   width: 11px;
+  cursor: pointer;
 }
 
 .card {
@@ -157,10 +159,12 @@
       height: 32px;
       width: 32px;
       color: $color-primary-dark;
+      cursor: pointer;
     }
     & .icon {
       padding-left: 1px;
       font-size: 20px;
+      cursor: pointer;
     }
   }
 }
