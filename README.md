@@ -42,9 +42,9 @@ Generamos los componentes del proyecto y comunicamos información mediante props
 
 Diseño responsive:
 
-<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/10.png" width="100"/>
-<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/11.png" width="100"/>
-<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/12.png" width="100"/>
+<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/10.png" width="200"/>
+<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/11.png" width="200"/>
+<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/12.png" width="200"/>
 
 
 #### Tercero. Versión completa con React
