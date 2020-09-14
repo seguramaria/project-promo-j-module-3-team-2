@@ -40,6 +40,11 @@ Implementamos mejoras en el código heredado, sin modificar la funcionalidad (ha
 Definimos la estructura de componentes React de la aplicación.
 Generamos los componentes del proyecto y comunicamos información mediante props.
 
+Diseño responsive:
+
+<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/10.png" width="100"/>
+<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/11.png" width="100"/>
+<img src="https://raw.githubusercontent.com/seguramaria/sailormooncards/master/src/images/responsive/12.png" width="100"/>
 #### Tercero. Versión completa con React
 
 Realizamos la interactividad, usando el estado y los eventos de React.
